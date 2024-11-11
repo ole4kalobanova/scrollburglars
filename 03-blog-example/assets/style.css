@@ -160,3 +160,9 @@ a {
 .heading-content {
   position: relative;
 }
+
+@media (max-width: 825px){
+  main {
+    overflow: hidden;
+  }
+}

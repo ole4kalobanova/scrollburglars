@@ -7169,11 +7169,20 @@
                               data-css="tve-u-5fac42ce99a403"
                             >
                               <div class="tcb-col" style="">
-                                <div
+                                <!-- <div
                                   class="thrv_wrapper thrv_contentbox_shortcode thrv-content-box tve-elem-default-pad"
                                   data-css="tve-u-5fac42ce99a412"
                                   style=""
-                                ></div>
+                                ></div> -->
+                                <!--
+                                  NOTE: The solution in this case is to remove an element that
+                                  used negative margins, and served no clear purpose.
+                                  But it doesn't protect us against this exact issue coming back.
+                                  
+                                  RECOMMENDED SOLUTION: add "overwlof:hidden" for "tve_flt" container.
+                                  Anything that goes beyond width of "tve_flt" container will be truncated and hidden.This is kind of aggressive solution.
+                                  And it's not without consequence. The most significant consequence is that any element with position: sticky won't work if it has a parent or ancestor that uses overflow:hidden. So if somewhere deep in this tree, we had an element that used sticky positioning, this solution wouldn't quite work. In this case, we don't really have any sticky elements to worry about. 
+                                -->
                               </div>
                             </div>
                           </div>
